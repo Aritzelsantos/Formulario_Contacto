@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f8fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contenedor {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2b6f9e;
+        }
+
+        .formulario {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .campo label {
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, textarea {
+            padding: 12px;
+            border: 1px solid #aaa;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .comentario {
+            grid-column: 1 / 3;
+        }
+
+        .captcha {
+            grid-column: 1 / 3;
+            background-color: #eaf6ff;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .boton {
+            grid-column: 1 / 3;
+            text-align: center;
+        }
+
+        button {
+            background-color: #2b8ac6;
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 8px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #176b9e;
+        }
+
+        .mapa {
+            margin-top: 30px;
+        }
+
+        .mapa h2 {
+            color: #2b6f9e;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 700px) {
+            .formulario {
+                grid-template-columns: 1fr;
+            }
+
+            .comentario,
+            .captcha,
+            .boton {
+                grid-column: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Formulario de Contacto</h1>
+
+        <form class="formulario">
+
+            <div class="campo">
+                <label>Nombre:</label>
+                <input type="text" placeholder="Escribe tu nombre" required>
+            </div>
+
+            <div class="campo">
+                <label>Teléfono:</label>
+                <input type="tel" placeholder="Escribe tu teléfono" required>
+            </div>
+
+            <div class="campo">
+                <label>Correo:</label>
+                <input type="email" placeholder="Escribe tu correo" required>
+            </div>
+
+            <div class="campo comentario">
+                <label>Comentario:</label>
+                <textarea placeholder="Escribe tu comentario"></textarea>
+            </div>
+
+            <div class="captcha">
+                <label>
+                    <input type="checkbox" required>
+                    No soy un robot
+                </label>
+            </div>
+
+            <div class="boton">
+                <button type="submit">Enviar</button>
+            </div>
+
+        </form>
+
+        <div class="mapa">
+            <h2>Ubicación UATV</h2>
+
+            <iframe
+                src="https://www.google.com/maps?q=UATU%20Tulcingo%20de%20Valle%20Puebla&output=embed"
+                loading="lazy">
+            </iframe>
+        </div>
+
+    </div>
+
+</body>
+</html>
