@@ -50,6 +50,7 @@
             border: 1px solid #aaa;
             border-radius: 8px;
             font-size: 16px;
+            box-sizing: border-box;
         }
 
         textarea {
@@ -74,17 +75,18 @@
         }
 
         button {
-            background-color: #2b8ac6;
+            background-color: #00a000;
             color: white;
             border: none;
-            padding: 12px 35px;
+            padding: 14px 35px;
             border-radius: 8px;
             font-size: 17px;
             cursor: pointer;
+            font-weight: bold;
         }
 
         button:hover {
-            background-color: #176b9e;
+            background-color: #008000;
         }
 
         .mapa {
@@ -122,37 +124,54 @@
 
         <h1>Formulario de Contacto</h1>
 
-        <form class="formulario">
+        <form class="formulario" id="formulario">
 
             <div class="campo">
                 <label>Nombre:</label>
-                <input type="text" placeholder="Escribe tu nombre" required>
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Escribe tu nombre"
+                    required>
             </div>
 
             <div class="campo">
                 <label>Teléfono:</label>
-                <input type="tel" placeholder="Escribe tu teléfono" required>
+                <input
+                    type="tel"
+                    id="telefono"
+                    placeholder="Escribe tu teléfono"
+                    required>
             </div>
 
             <div class="campo">
                 <label>Correo:</label>
-                <input type="email" placeholder="Escribe tu correo" required>
+                <input
+                    type="email"
+                    id="correo"
+                    placeholder="Escribe tu correo"
+                    required>
             </div>
 
             <div class="campo comentario">
                 <label>Comentario:</label>
-                <textarea placeholder="Escribe tu comentario"></textarea>
+                <textarea
+                    id="comentario"
+                    placeholder="Escribe tu comentario"
+                    required></textarea>
             </div>
 
             <div class="captcha">
                 <label>
-                    <input type="checkbox" required>
+                    <input type="checkbox" id="robot" required>
                     No soy un robot
                 </label>
             </div>
 
             <div class="boton">
-                <button type="submit">Enviar</button>
+                <button type="submit">
+                    Enviar por WhatsApp
+                </button>
             </div>
 
         </form>
@@ -167,6 +186,33 @@
         </div>
 
     </div>
+
+    <script>
+        document.getElementById("formulario").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const nombre = document.getElementById("nombre").value;
+            const telefono = document.getElementById("telefono").value;
+            const correo = document.getElementById("correo").value;
+            const comentario = document.getElementById("comentario").value;
+
+            // CAMBIA ESTE NÚMERO POR EL WHATSAPP QUE RECIBIRÁ LOS MENSAJES
+            const numeroWhatsApp = "7571299189";
+
+            const mensaje =
+                "FORMULARIO DE CONTACTO%0A%0A" +
+                "Nombre: " + encodeURIComponent(nombre) + "%0A" +
+                "Teléfono: " + encodeURIComponent(telefono) + "%0A" +
+                "Correo: " + encodeURIComponent(correo) + "%0A" +
+                "Comentario: " + encodeURIComponent(comentario);
+
+            const enlace =
+                "https://wa.me/" + numeroWhatsApp + "?text=" + mensaje;
+
+            window.open(enlace, "_blank");
+        });
+    </script>
 
 </body>
 </html>
