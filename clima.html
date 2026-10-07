@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0d1216;
+            color: white;
+        }
+
+        .tarjeta {
+            width: 380px;
+            padding: 45px 35px;
+            text-align: center;
+            background: #202020;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .titulo {
+            font-size: 52px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .ciudad {
+            font-size: 24px;
+            color: #bdbdbd;
+            margin-bottom: 35px;
+        }
+
+        .temperatura {
+            font-size: 75px;
+            font-weight: bold;
+            color: #dce8ff;
+        }
+
+        .estado {
+            font-size: 26px;
+            margin: 25px 0 35px;
+        }
+
+        .datos {
+            border-top: 1px solid #555;
+            padding-top: 30px;
+            text-align: left;
+            margin: 0 20px;
+        }
+
+        .dato {
+            font-size: 21px;
+            margin: 18px 0;
+        }
+
+        .boton {
+            margin-top: 25px;
+            padding: 16px 30px;
+            border: none;
+            border-radius: 12px;
+            background: #1d3478;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            background: #29499b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tarjeta">
+
+        <div class="titulo">
+            🌤️ Clima
+        </div>
+
+        <div class="ciudad">
+            Puebla, México
+        </div>
+
+        <div class="temperatura">
+            19.2 °C
+        </div>
+
+        <div class="estado">
+            🌤️ Parcialmente nublado
+        </div>
+
+        <div class="datos">
+
+            <div class="dato">
+                💨 Viento: 5.1 km/h
+            </div>
+
+            <div class="dato">
+                💧 Humedad: 69 %
+            </div>
+
+        </div>
+
+        <button class="boton" onclick="actualizarClima()">
+            Actualizar clima
+        </button>
+
+    </div>
+
+    <script>
+        function actualizarClima() {
+            alert("Clima actualizado correctamente");
+        }
+    </script>
+
+</body>
+</html>
